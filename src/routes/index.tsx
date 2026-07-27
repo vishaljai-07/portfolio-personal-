@@ -1,24 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/sections/hero";
+import { About } from "@/components/sections/about";
+import { Skills } from "@/components/sections/skills";
+import { Experience } from "@/components/sections/experience";
+import { Projects } from "@/components/sections/projects";
+import { Certifications, GitHubSection } from "@/components/sections/credentials";
+import { Contact } from "@/components/sections/contact";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Vishal J — Cyber Security Engineer & SOC Analyst Aspirant";
+const DESC =
+  "Threat detection, SIEM engineering and MITRE ATT&CK work by Vishal J. Projects, skills and case studies in one place.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <About />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Certifications />
+      <GitHubSection />
+      <Contact />
+    </>
   );
 }

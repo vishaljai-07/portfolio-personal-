@@ -65,7 +65,7 @@ function ProjectDetail() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-8 flex flex-wrap gap-2">
-          {project.stack.map((t) => (
+          {project.stack.map((t: string) => (
             <span
               key={t}
               className="rounded-md border border-border bg-surface-2/60 px-2.5 py-1 font-mono text-[11px] text-muted-foreground"
@@ -80,7 +80,7 @@ function ProjectDetail() {
           <div>
             <h2 className="font-display text-xl font-medium">Highlights</h2>
             <ul className="mt-4 space-y-3">
-              {project.highlights.map((h) => (
+              {project.highlights.map((h: string) => (
                 <li key={h} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
                   <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" />
                   {h}

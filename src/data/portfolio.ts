@@ -52,7 +52,14 @@ export const about = [
   },
 ];
 
-export const stats = [
+export type Stat = {
+  value: number;
+  suffix: string;
+  label: string;
+  note?: string;
+};
+
+export const stats: Stat[] = [
   { value: 8, suffix: "", label: "Tools & platforms" },
   { value: 1, suffix: "", label: "Security project" },
   { value: 2, suffix: "", label: "Internships" },

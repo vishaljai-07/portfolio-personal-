@@ -4,7 +4,7 @@ import { About } from "@/components/sections/about";
 import { Skills } from "@/components/sections/skills";
 import { Experience } from "@/components/sections/experience";
 import { Projects } from "@/components/sections/projects";
-import { Certifications, GitHubSection } from "@/components/sections/credentials";
+import { Achievements, Certifications } from "@/components/sections/credentials";
 import { Contact } from "@/components/sections/contact";
 
 const TITLE = "Vishal J — Cyber Security Engineer & SOC Analyst Aspirant";
@@ -32,7 +32,7 @@ function Index() {
       <Experience />
       <Projects />
       <Certifications />
-      <GitHubSection />
+      <Achievements />
       <Contact />
     </>
   );

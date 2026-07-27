@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { projects, type Project } from "@/data/portfolio";
 import { Reveal, SectionHeading, Spotlight, Tilt } from "@/components/site/primitives";
 
@@ -60,15 +60,6 @@ export function ProjectCard({ project }: { project: Project }) {
             >
               <Github className="size-3.5" />
               GitHub
-            </a>
-            <a
-              href={project.demo ?? project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3.5 py-2 text-xs text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
-            >
-              <ExternalLink className="size-3.5" />
-              Live demo
             </a>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUp, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import { Magnetic, Reveal } from "./primitives";
 
@@ -17,9 +17,6 @@ export function Footer() {
               Open to SOC analyst and detection engineering opportunities.
             </p>
             <div className="mt-5 flex items-center gap-2">
-              <FooterIcon href={profile.github} label="GitHub">
-                <Github className="size-4" />
-              </FooterIcon>
               <FooterIcon href={profile.linkedin} label="LinkedIn">
                 <Linkedin className="size-4" />
               </FooterIcon>

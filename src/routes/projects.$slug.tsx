@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, Github } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import { Reveal } from "@/components/site/primitives";
 
@@ -101,15 +101,6 @@ function ProjectDetail() {
           >
             <Github className="size-4" />
             View source
-          </a>
-          <a
-            href={project.demo ?? project.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm transition-colors hover:border-primary/50"
-          >
-            <ExternalLink className="size-4" />
-            Live demo
           </a>
         </Reveal>
       </div>

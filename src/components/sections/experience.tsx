@@ -8,7 +8,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="Experience"
           title="Where the practice happened."
-          lead="Roles, internships and training. Details below are placeholders until the resume is supplied."
+          lead="Roles, internships and training drawn from the resume."
         />
 
         <ol className="relative mt-12 ml-3 space-y-6 border-l border-border pl-8">

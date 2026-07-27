@@ -1,65 +1,62 @@
 /**
  * Single source of truth for portfolio content.
  *
- * NOTE: No resume file was provided, so every field that must come from the
- * resume is marked with `placeholder: true` and uses an explicit
- * "Add from resume" string instead of invented data.
+ * Resume-backed fields are populated from the uploaded PDF.
  */
 
 export const PLACEHOLDER = "Add from resume";
 
 export const profile = {
   name: "Vishal J",
-  roles: ["Cyber Security Enthusiast", "SOC Analyst Aspirant", "Threat Detection"],
+  roles: ["Cyber Security Enthusiast", "B.Tech IT Student", "SOC Aspirant"],
   intro:
-    "I study how attacks actually happen — then build the detections that catch them. My focus is SOC operations, SIEM engineering and mapping real adversary behaviour to MITRE ATT&CK.",
-  location: PLACEHOLDER,
-  email: PLACEHOLDER,
-  phone: PLACEHOLDER,
-  github: "https://github.com/",
-  githubUser: PLACEHOLDER,
-  linkedin: "https://www.linkedin.com/",
+    "Motivated B.Tech Information Technology student with hands-on internship experience in cybersecurity. Skilled in Python, Linux, HTML, CSS and networking fundamentals, with a strong interest in SOC work and vulnerability assessment.",
+  location: "Chennai, Tamil Nadu",
+  email: "vishaljai@yahoo.com",
+  phone: "+91 9791205137",
+  github: "https://github.com/vishaljai-07",
+  linkedin: "https://www.linkedin.com/in/vishaljai",
   resumeUrl: "/resume.pdf",
 };
 
 export const about = [
   {
     label: "Career Objective",
-    body: "To join a Security Operations Center where I can triage real alerts, tune detections and grow into a threat detection engineer.",
+    body: "Motivated B.Tech Information Technology student with hands-on internship experience in cybersecurity and a clear interest in SOC and vulnerability assessment work.",
     placeholder: false,
   },
   {
     label: "Education",
-    body: PLACEHOLDER,
-    placeholder: true,
+    body: "B.Tech Information Technology, S.A Engineering College (2023-Present), CGPA 7.68 up to Semester VI." + "\n" + "Higher Secondary Education, Shri Krishnaswamy Matric Higher Secondary School (2022-2023), 60%.",
+    placeholder: false,
   },
   {
     label: "Focus Area",
-    body: "SOC monitoring, SIEM (Splunk, Microsoft Sentinel), network forensics and detection engineering against MITRE ATT&CK techniques.",
+    body: "SOC monitoring, SIEM tools, vulnerability assessment, incident response, Linux, networking fundamentals, and threat detection.",
     placeholder: false,
   },
   {
     label: "Passion",
-    body: "Breaking down incidents into a timeline, writing the detection rule that would have caught it, and documenting it clearly enough for anyone to follow.",
+    body: "Security monitoring, log analysis, anomaly detection, cyber forensic investigation, and documenting findings clearly for the next analyst.",
     placeholder: false,
   },
   {
     label: "Languages",
-    body: PLACEHOLDER,
-    placeholder: true,
+    body: "English, Tamil and Hindi.",
+    placeholder: false,
   },
   {
     label: "Location",
-    body: PLACEHOLDER,
-    placeholder: true,
+    body: "Chennai, Tamil Nadu.",
+    placeholder: false,
   },
 ];
 
 export const stats = [
-  { value: 15, suffix: "+", label: "Tools & platforms" },
-  { value: 4, suffix: "", label: "Security projects" },
-  { value: 100, suffix: "%", label: "Home-lab uptime" },
-  { value: 0, suffix: "", label: "Certifications logged", note: PLACEHOLDER },
+  { value: 8, suffix: "", label: "Tools & platforms" },
+  { value: 1, suffix: "", label: "Security project" },
+  { value: 2, suffix: "", label: "Internships" },
+  { value: 2, suffix: "", label: "Certifications" },
 ];
 
 export type SkillGroup = {
@@ -74,6 +71,7 @@ export const skills: SkillGroup[] = [
     blurb: "Scripting automation, parsers and small security tools.",
     items: [
       { name: "Python", icon: "Code2" },
+      { name: "Java Basics", icon: "Code2" },
       { name: "HTML", icon: "FileCode" },
       { name: "CSS", icon: "Palette" },
       { name: "Flask", icon: "Server" },
@@ -84,8 +82,6 @@ export const skills: SkillGroup[] = [
     group: "Security Operations",
     blurb: "Detection, triage and investigation across the alert lifecycle.",
     items: [
-      { name: "Splunk", icon: "Search" },
-      { name: "Microsoft Sentinel", icon: "Radar" },
       { name: "MITRE ATT&CK", icon: "Crosshair" },
       { name: "Cyber Security", icon: "ShieldCheck" },
     ],
@@ -105,6 +101,7 @@ export const skills: SkillGroup[] = [
     items: [
       { name: "Linux", icon: "Terminal" },
       { name: "Docker", icon: "Container" },
+      { name: "GitHub", icon: "Github" },
     ],
   },
 ];
@@ -119,21 +116,27 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    role: PLACEHOLDER,
-    org: "Internship — organisation",
-    period: PLACEHOLDER,
+    role: "Cyber Security Intern",
+    org: "IARM Information Security Pvt. Ltd.",
+    period: "June 2026 ( 1 Month )",
     points: [
-      "Responsibilities and outcomes from the resume go here.",
-      "Tools used and measurable impact go here.",
+      "Monitored and analyzed security events using SIEM tools to identify and investigate potential threats.",
+      "Performed basic Vulnerability Assessment (VA) and gained exposure to VAPT methodologies and security testing tools.",
+      "Worked with Linux, Active Directory, networking fundamentals, and incident response workflows in a SOC environment.",
+      "Assisted in security monitoring, log analysis, and incident investigation following SOC best practices.",
     ],
-    placeholder: true,
+    placeholder: false,
   },
   {
-    role: PLACEHOLDER,
-    org: "Training / role",
-    period: PLACEHOLDER,
-    points: ["Details from the resume go here."],
-    placeholder: true,
+    role: "Cyber Security Intern",
+    org: "Arjun Vision Tech Solution",
+    period: "July 2025",
+    points: [
+      "Gained practical exposure to cybersecurity fundamentals.",
+      "Learned about threat identification and risk management techniques. Studied secure system practices and protection strategies.",
+      "Explored how organizations monitor and prevent cyber attacks.",
+    ],
+    placeholder: false,
   },
 ];
 
@@ -155,85 +158,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "soc-detection-lab",
-    title: "SOC Detection Lab",
-    tagline: "A home SOC that generates, ships and detects real attacker behaviour.",
+    slug: "advanced-system-log-analyzer",
+    title: "Advanced System Log Analyzer for Anomaly Detection & Cyber Forensic Investigation",
+    tagline: "AI-powered log analysis that detects anomalies and sends real-time threat alerts.",
     description:
-      "A self-hosted lab where Windows and Linux endpoints forward telemetry into a SIEM, simulated attacks are replayed, and detections are written and tuned against them.",
+      "An AI-powered system log analyser that automates log monitoring, detects abnormal activity and sends real-time alerts to speed up incident response.",
     category: "Detection",
-    stack: ["Splunk", "Microsoft Sentinel", "Linux", "Docker", "MITRE ATT&CK"],
-    image: "/images/project-soc-lab.jpg",
-    github: "https://github.com/",
-    highlights: [
-      "Endpoint and network telemetry centralised into a single searchable index",
-      "Attack simulations mapped to ATT&CK techniques before writing detections",
-      "Every rule documented with trigger logic, false-positive notes and triage steps",
-    ],
-    overview:
-      "The lab exists to answer one question: if this technique ran in a real network, would my detection fire, and would an analyst know what to do next? Hosts forward logs into the SIEM, attacks are replayed from a controlled box, and each detection is validated against both the malicious run and normal day-to-day noise.",
-    role: "Built the lab end to end — collection, parsing, detection content and the triage runbooks.",
-    outcome:
-      "A repeatable environment for testing detection ideas, and a written library of rules with their ATT&CK mapping.",
-  },
-  {
-    slug: "network-recon-toolkit",
-    title: "Network Recon Toolkit",
-    tagline: "Nmap and Wireshark workflows wrapped into repeatable Python reporting.",
-    description:
-      "Python tooling that runs structured discovery scans, parses the output and produces a readable posture report instead of a wall of raw scan text.",
-    category: "Tooling",
-    stack: ["Python", "Nmap", "Wireshark", "Linux"],
-    image: "/images/project-recon.jpg",
-    github: "https://github.com/",
-    highlights: [
-      "Structured scan profiles for discovery, service and version enumeration",
-      "Parser turns raw output into a diffable inventory of hosts and services",
-      "Capture analysis surfaces unexpected talkers and plaintext protocols",
-    ],
-    overview:
-      "Recon output is only useful if you can compare it over time. The toolkit stores each run as structured data so a new scan can be diffed against the last one, making a newly exposed service obvious instead of buried.",
-    role: "Designed the scan profiles, wrote the parsing layer and the reporting output.",
-    outcome: "Scan-to-report time reduced from a manual read-through to a single command.",
-  },
-  {
-    slug: "threat-intel-dashboard",
-    title: "Threat Intel Dashboard",
-    tagline: "A Flask dashboard that aggregates indicators and scores them.",
-    description:
-      "A web application that ingests indicators of compromise, enriches them and presents an analyst-friendly view with search, tagging and confidence scoring.",
-    category: "Web",
-    stack: ["Python", "Flask", "MongoDB", "HTML", "CSS", "Docker"],
+    stack: ["HTML", "CSS", "Flask", "Python", "MongoDB"],
     image: "/images/project-intel.jpg",
-    github: "https://github.com/",
+    github: "https://github.com/vishaljai-07/Cyber-Monitoring-.git",
     highlights: [
-      "Indicator ingestion with de-duplication and source tracking",
-      "Confidence scoring so noisy feeds do not drown out reliable ones",
-      "Containerised so the whole stack starts with one command",
+      "Real-time log monitoring",
+      "AI-based anomaly detection with LSTM and Isolation Forest",
+      "Threat classification, email alerts and interactive dashboard views",
     ],
     overview:
-      "Feeds disagree, repeat each other and age badly. The dashboard normalises indicators into one collection, tracks which source supplied what, and scores confidence so an analyst can decide quickly whether an indicator is worth acting on.",
-    role: "Full build — data model, ingestion, scoring logic and the interface.",
-    outcome: "One searchable view over multiple feeds, deployable anywhere Docker runs.",
-  },
-  {
-    slug: "attack-mapping-playbooks",
-    title: "ATT&CK Mapping Playbooks",
-    tagline: "Triage playbooks written technique-first, not alert-first.",
-    description:
-      "A documented set of investigation playbooks keyed to MITRE ATT&CK techniques, each with the data sources to check, the queries to run and the escalation path.",
-    category: "Network",
-    stack: ["MITRE ATT&CK", "Splunk", "Microsoft Sentinel"],
-    image: "/images/project-playbooks.jpg",
-    github: "https://github.com/",
-    highlights: [
-      "Each playbook keyed to a technique ID with required log sources listed",
-      "Ready-to-run SIEM queries for the initial pivot",
-      "Explicit escalation criteria so triage decisions are consistent",
-    ],
-    overview:
-      "Alert-first playbooks break the moment the alert name changes. Writing them technique-first means the same investigation logic survives a tooling change, and new detections inherit an existing playbook instead of needing a new one.",
-    role: "Researched techniques, wrote the queries and structured the playbook format.",
-    outcome: "A consistent triage format that a new analyst can follow without context.",
+      "Traditional log monitoring generates thousands of events every day, making it difficult to spot real threats quickly. This project automates log collection, preprocessing and anomaly detection so suspicious behavior can be classified and surfaced faster for analysts.",
+    role: "Designed the project architecture, developed the Flask backend, implemented the AI models and built the real-time dashboard and alert flow.",
+    outcome: "Improves visibility into potential cyber threats, reduces manual log analysis effort and supports faster incident response and cyber forensic investigations.",
   },
 ];
 
@@ -245,17 +187,46 @@ export type Certification = {
   placeholder?: boolean;
 };
 
+export type Achievement = {
+  title: string;
+  event: string;
+  details: string;
+};
+
 export const certifications: Certification[] = [
-  { name: PLACEHOLDER, org: "Issuing organisation", status: "Completed", placeholder: true },
-  { name: PLACEHOLDER, org: "Issuing organisation", status: "In progress", placeholder: true },
-  { name: PLACEHOLDER, org: "Issuing organisation", status: "Planned", placeholder: true },
+  {
+    name: "Introduction to Cyber Security",
+    org: "Cisco Networking Academy",
+    status: "Completed",
+  },
+  {
+    name: "Cyber Threat Management",
+    org: "Cisco Networking Academy",
+    status: "In progress",
+  },
 ];
 
-export const githubStats = [
-  { label: "Public repositories", value: 12, suffix: "" },
-  { label: "Contributions this year", value: 340, suffix: "+" },
-  { label: "Longest streak (days)", value: 21, suffix: "" },
-  { label: "Stars earned", value: 18, suffix: "" },
+export const achievements: Achievement[] = [
+  {
+    title: "MAGNUS25",
+    event: "Participant, Paper Presentation",
+    details: "Participated in the MAGNUS25 paper presentation event.",
+  },
+  {
+    title: "ELITEZ24",
+    event: "Participant, Paper Presentation",
+    details: "Participated in the ELITEZ24 paper presentation event.",
+  },
+  {
+    title: "Agentic AI Master Class",
+    event: "Workshop Participant",
+    details: "Attended the Agentic AI Master Class workshop as a participant.",
+  },
+  {
+    title: "MindQuest",
+    event: "Secured 2nd Position in Technical Quiz",
+    details: "Secured second place in the MindQuest technical quiz.",
+  },
 ];
 
 export const topLanguages = [
@@ -273,6 +244,6 @@ export const navSections = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "certifications", label: "Certifications" },
-  { id: "github", label: "GitHub" },
+  { id: "achievements", label: "Achievements" },
   { id: "contact", label: "Contact" },
 ];

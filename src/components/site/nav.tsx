@@ -150,7 +150,6 @@ export function CommandPalette({ open, setOpen }: { open: boolean; setOpen: (v: 
       run: () => navigate({ to: "/projects/$slug", params: { slug: p.slug } }),
     })),
     { label: "Download Resume", hint: "Action", run: () => window.open(profile.resumeUrl, "_blank") },
-    { label: "GitHub", hint: "External", run: () => window.open(profile.github, "_blank") },
     { label: "LinkedIn", hint: "External", run: () => window.open(profile.linkedin, "_blank") },
   ];
 

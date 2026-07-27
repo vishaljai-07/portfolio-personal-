@@ -16,7 +16,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1.5 font-mono text-[11px] tracking-[0.18em] text-muted-foreground uppercase"
           >
             <ShieldCheck className="size-3.5 text-primary" />
-            Available for SOC roles
+            OPEN TO CYBER SECURITY OPPORTUNITIES
           </motion.div>
 
           <motion.h1
@@ -97,8 +97,8 @@ export function Hero() {
           </div>
 
           <div className="glass absolute -bottom-6 -left-4 rounded-2xl px-4 py-3 font-mono text-xs sm:-left-8">
-            <p className="text-muted-foreground">detection.status</p>
-            <p className="mt-1 text-primary">monitoring · 24/7 lab</p>
+            <p className="text-muted-foreground">Currently Seeking for Internship Opportunities</p>
+            <p className="mt-1 text-primary">SOC Analyst , Vulnerability Assessment & Penetration Testing , Infrastructure Security</p>
           </div>
         </motion.div>
       </div>

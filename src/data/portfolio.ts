@@ -81,7 +81,7 @@ export const skills: SkillGroup[] = [
       { name: "Java Basics", icon: "Code2" },
       { name: "HTML", icon: "FileCode" },
       { name: "CSS", icon: "Palette" },
-      { name: "Flask", icon: "Server" },
+      { name: "Prompt Engineering", icon: "Sparkles" },
       { name: "MongoDB", icon: "Database" },
     ],
   },
@@ -119,6 +119,7 @@ export type Experience = {
   period: string;
   points: string[];
   placeholder?: boolean;
+  verifyUrl?: string;
 };
 
 export const experience: Experience[] = [
@@ -133,6 +134,7 @@ export const experience: Experience[] = [
       "Assisted in security monitoring, log analysis, and incident investigation following SOC best practices.",
     ],
     placeholder: false,
+    verifyUrl: "/iarm-internship.pdf",
   },
   {
     role: "Cyber Security Intern",
@@ -144,6 +146,7 @@ export const experience: Experience[] = [
       "Explored how organizations monitor and prevent cyber attacks.",
     ],
     placeholder: false,
+    verifyUrl: "/arjun-internship.pdf",
   },
 ];
 
@@ -205,6 +208,7 @@ export const certifications: Certification[] = [
     name: "Introduction to Cyber Security",
     org: "Cisco Networking Academy",
     status: "Completed",
+    verifyUrl: "/cisco-introduction.pdf",
   },
   {
     name: "Cyber Threat Management",

@@ -92,17 +92,19 @@ function ProjectDetail() {
           <Block title="Outcome" body={project.outcome} />
         </Reveal>
 
-        <Reveal delay={0.14} className="mt-12 flex flex-wrap gap-3">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-secondary"
-          >
-            <Github className="size-4" />
-            View source
-          </a>
-        </Reveal>
+        {project.github && (
+          <Reveal delay={0.14} className="mt-12 flex flex-wrap gap-3">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-secondary"
+            >
+              <Github className="size-4" />
+              View source
+            </a>
+          </Reveal>
+        )}
       </div>
     </article>
   );

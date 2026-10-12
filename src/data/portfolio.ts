@@ -158,7 +158,7 @@ export type Project = {
   category: "Detection" | "Tooling" | "Network" | "Web";
   stack: string[];
   image: string;
-  github: string;
+  github?: string;
   demo?: string;
   highlights: string[];
   overview: string;
@@ -186,6 +186,30 @@ export const projects: Project[] = [
       "Traditional log monitoring generates thousands of events every day, making it difficult to spot real threats quickly. This project automates log collection, preprocessing and anomaly detection so suspicious behavior can be classified and surfaced faster for analysts.",
     role: "Designed the project architecture, developed the Flask backend, implemented the AI models and built the real-time dashboard and alert flow.",
     outcome: "Improves visibility into potential cyber threats, reduces manual log analysis effort and supports faster incident response and cyber forensic investigations.",
+  },
+  {
+    slug: "aegis",
+    title: "AEGIS — Adaptive Exposure Graph & Intelligent Security Validation",
+    tagline:
+      "A team-built autonomous penetration-testing workflow that validates findings and re-tests remediation.",
+    description:
+      "Designed around MAPE-K-V, AEGIS connects authorized asset discovery, evidence-backed finding validation, and post-remediation exploit-chain replay for controlled security assessments.",
+    category: "Detection",
+    stack: ["Python", "Nmap", "Metasploit", "Hydra", "SQLMap", "JSON"],
+    image: "/images/project-soc-lab.jpg",
+    highlights: [
+      "MAPE-K-V lifecycle: Monitor, Analyze, Plan, Execute, Knowledge, and Verify",
+      "Independent corroboration grades findings Confirmed, Suspected, or Needs Human Review",
+      "Remediation replay classifies results as Verified Closed, Ineffective Fix / Reopened, Regression Detected, or Inconclusive",
+      "Evidence ledger and finding history support traceable, evidence-backed reports",
+      "Evaluation scenarios cover unpatched, ambiguous, correctly patched, ineffective-fix, and regression cases",
+    ],
+    overview:
+      "AEGIS (Adaptive Exposure Graph & Intelligent Security Validation) is an academic team project that extends autonomous penetration testing beyond a single exploit attempt. The system treats tool output as evidence to validate, rather than unquestionable proof. Its MAPE-K-V workflow discovers assets and services, ranks candidate actions by expected gain, information value, cost, and risk, executes authorized assessments, independently corroborates findings, and verifies reported fixes by replaying the original attack chain.",
+    role:
+      "Contributed as a project team member to the design and development of the AEGIS autonomous penetration-testing and security-validation workflow.",
+    outcome:
+      "The project is designed to improve finding reliability, expose ineffective fixes and regressions, and preserve each finding’s lifecycle from discovery through remediation verification. Its evaluation plan measures confidence-grade accuracy, verification-verdict accuracy, false-positive reduction, and false all-clear rate; the report does not claim measured scores.",
   },
 ];
 

@@ -5,7 +5,8 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { projects, type Project } from "@/data/portfolio";
 import { Reveal, SectionHeading, Spotlight, Tilt } from "@/components/site/primitives";
 
-const FILTERS = ["All", "Detection", "Tooling", "Network", "Web"] as const;
+type ProjectFilter = "All" | Project["category"];
+const FILTERS: ProjectFilter[] = ["All", ...new Set(projects.map((project) => project.category))];
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -71,7 +72,7 @@ export function ProjectCard({ project }: { project: Project }) {
 }
 
 export function Projects() {
-  const [filter, setFilter] = useState<(typeof FILTERS)[number]>("All");
+  const [filter, setFilter] = useState<ProjectFilter>("All");
   const list = projects.filter((p) => filter === "All" || p.category === filter);
 
   return (

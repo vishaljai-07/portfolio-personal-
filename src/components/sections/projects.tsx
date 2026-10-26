@@ -1,12 +1,8 @@
-import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { ArrowUpRight, Github } from "lucide-react";
 import { projects, type Project } from "@/data/portfolio";
 import { Reveal, SectionHeading, Spotlight, Tilt } from "@/components/site/primitives";
-
-type ProjectFilter = "All" | Project["category"];
-const FILTERS: ProjectFilter[] = ["All", ...new Set(projects.map((project) => project.category))];
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -72,52 +68,27 @@ export function ProjectCard({ project }: { project: Project }) {
 }
 
 export function Projects() {
-  const [filter, setFilter] = useState<ProjectFilter>("All");
-  const list = projects.filter((p) => filter === "All" || p.category === filter);
-
   return (
     <section id="projects" className="relative scroll-mt-24 px-4 py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading
-            eyebrow="Projects"
-            title="Work that proves the thinking."
-            lead="Each project ships with a written case study: the problem, the approach and what it produced."
-          />
-          <Reveal delay={0.1}>
-            <div className="flex flex-wrap gap-1.5">
-              {FILTERS.map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  className={`rounded-full border px-3.5 py-1.5 font-mono text-[11px] tracking-wider uppercase transition-all duration-300 ${
-                    filter === f
-                      ? "border-primary/60 bg-primary/15 text-foreground"
-                      : "border-border text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
-          </Reveal>
-        </div>
+        <SectionHeading
+          eyebrow="Projects"
+          title="Work that proves the thinking."
+          lead="Each project ships with a written case study: the problem, the approach and what it produced."
+        />
 
-        <motion.div layout className="mt-12 grid gap-5 lg:grid-cols-2">
-          <AnimatePresence mode="popLayout">
-            {list.map((p) => (
-              <motion.div
-                key={p.slug}
-                layout
-                initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -10, filter: "blur(8px)" }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <ProjectCard project={p} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+        <motion.div layout className="mt-12 grid gap-5 md:grid-cols-2">
+          {projects.map((p) => (
+            <motion.div
+              key={p.slug}
+              layout
+              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <ProjectCard project={p} />
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
